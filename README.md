@@ -74,8 +74,9 @@ If you're on public WiFi, use something else.
 ## Who this is for
 
 * You're on a trusted LAN (home, office, workshop) and want to share files quickly
+* You want to download files on your phone without cables or cloud storage
 * You don't want to expose an unauthenticated HTTP server to everyone on the network
-* You want something lighter than filebrowser or Samba with zero setup time
+* You want something lightweight with zero setup time
 
 ## Comparison
 
