@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "servepass"
+version = "0.1.0"
+description = "LAN file server with password protection. Like python -m http.server but with auth"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Fulvio Favilla", email = "contact@fulvio.sh" }]
+keywords = ["http", "server", "lan", "file-sharing", "auth", "privacy"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/fulviofavilla/servepass"
+Repository = "https://github.com/fulviofavilla/servepass"
+Issues = "https://github.com/fulviofavilla/servepass/issues"
+
+[project.scripts]
+servepass = "servepass.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["servepass*"]
