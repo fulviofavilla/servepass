@@ -5,19 +5,15 @@ Nothing fancy. No dependencies. Just stdlib and a link.
 """
 
 import argparse
-import json
 import os
 import secrets
 import signal
 import socket
 import sys
 from http.server import SimpleHTTPRequestHandler, HTTPServer
-from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
 
-CONFIG_DIR = Path.home() / ".servepass"
-CONFIG_FILE = CONFIG_DIR / "config"
 DEFAULT_PORT = 8080
 
 
