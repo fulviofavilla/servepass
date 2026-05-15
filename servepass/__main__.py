@@ -14,6 +14,8 @@ from http.server import SimpleHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 
 
+from servepass import __version__
+
 DEFAULT_PORT = 8080
 
 
@@ -201,6 +203,11 @@ examples:
         "--no-auth",
         action="store_true",
         help="disable authentication",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
     )
 
     args = parser.parse_args()
