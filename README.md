@@ -39,6 +39,9 @@ servepass ./downloads
 # Custom port
 servepass --port 9090
 
+# Fixed token
+servepass --token mytoken
+
 # No authentication
 servepass --no-auth
 ```
@@ -54,6 +57,17 @@ Every time you run servepass, a fresh token is generated. You get a URL and an o
 ```
 
 Open the URL in any browser on your network and you're in. Scan the QR code to open it directly on your phone.
+
+## What you can do
+
+**Download files on your phone without cables**
+Serve a folder, scan the QR code on your iPhone or Android, and grab whatever you need directly from the browser. Works with any file type: PDFs, photos, videos, zip archives.
+
+**Send photos from your phone to your computer**
+Open the URL on your phone, use the upload form at the top of the page, and the file lands directly in the served folder on your machine. No AirDrop, no cloud, no cable.
+
+**Share documents with someone on the same network**
+Run servepass in a folder with the files you want to share. Send the link. They open it in any browser and download what they need.
 
 ## QR code
 
@@ -74,7 +88,7 @@ If you're on public WiFi, use something else.
 ## Who this is for
 
 * You're on a trusted LAN (home, office, workshop) and want to share files quickly
-* You want to download files on your phone without cables or cloud storage
+* You want to transfer files to and from your phone without cables or cloud storage
 * You don't want to expose an unauthenticated HTTP server to everyone on the network
 * You want something lightweight with zero setup time
 
@@ -86,17 +100,17 @@ If you're on public WiFi, use something else.
 | Install | `pipx install servepass` | Built-in | Binary + config |
 | Dependencies | None | None | None |
 | LAN IP detection | Yes | No | Yes |
+| File upload | Yes | No | Yes |
 | QR code | Optional | No | No |
-| File upload | Planned | No | Yes |
 
 ## Roadmap
 
 - [x] Serve with token auth
 - [x] Auto-detect LAN IP
 - [x] QR code in terminal (optional)
-- [ ] `--token` flag to set a fixed token
-- [ ] HTTPS with self-signed cert
-- [ ] File upload via browser
+- [x] `--token` flag for a fixed token
+- [x] File upload via browser
+- [ ] Expiration flag (`--expires 30m`)
 
 ## License
 
