@@ -103,15 +103,6 @@ If you're on public WiFi, use something else.
 | File upload | Yes | No | Yes |
 | QR code | Optional | No | No |
 
-## Roadmap
-
-- [x] Serve with token auth
-- [x] Auto-detect LAN IP
-- [x] QR code in terminal (optional)
-- [x] `--token` flag for a fixed token
-- [x] File upload via browser
-- [ ] Expiration flag (`--expires 30m`)
-
 ## License
 
 MIT
