@@ -94,9 +94,11 @@ def sanitize_filename(name):
     Strip path components and null bytes from an uploaded filename.
     Only the final filename component is kept -- no directory traversal possible.
     """
-    name = name.replace("\x00", "")
+    name = name.replace("\x00", "").replace("\\", "/")
     name = Path(name).name
-    return name or "upload"
+    if name in ("", ".", ".."):
+        return "upload"
+    return name
 
 
 def parse_multipart(content_type, body):
@@ -287,7 +289,7 @@ def make_token_handler(token, directory):
             parsed = urlparse(self.path)
             params = parse_qs(parsed.query)
             supplied = params.get("token", [None])[0]
-            if supplied == token:
+            if supplied is not None and secrets.compare_digest(supplied, token):
                 return True
             self.send_response(403)
             self.send_header("Content-Type", "text/plain")
